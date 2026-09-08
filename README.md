@@ -1,52 +1,55 @@
-# Práctica: Clases Abstractas y Polimorfismo en Java
+# Práctica: Jerarquía de Clases Animales (POO)
 
-## Datos del Estudiante
-* **Nombre:** Rafael Dominguez Jimenez
-* **Matrícula:** S25018109
-* **Fecha:** 08/08/2026
+Implementación en Java sobre abstracción, herencia y polimorfismo mediante el modelado de una taxonomía animal compuesta por clases abstractas intermedias y clases concretas.
 
 ---
 
-## Descripción del Proyecto
-Este repositorio contiene la implementación práctica de conceptos clave de la Programación Orientada a Objetos (POO) en Java, tales como **abstracción**, **herencia**, **polimorfismo** y el uso de **clases y métodos abstractos**.
+## 📌 Datos del Alumno
 
-### Componentes de la Práctica
-1. **Jerarquía de Animales:**
-   * **Clase raíz abstracta (`Animal`):** Define los atributos comunes (`sonido`, `alimentos`, `hábitat`, `nombreCientifico`) y los métodos abstractos correspondientes para obligar a las subclases a implementar su comportamiento específico.
-   * **Clases intermedias:** `Cánido` y `Felino`.
-   * **Clases concretas:** `Perro`, `Lobo`, `León` y `Gato`, cada una implementando sus características biológicas y sonoras correspondientes.
-   * **Prueba:** Generación y recorrido de un arreglo/lista polimórfica de tipo `Animal[]` para mostrar sus datos en consola.
-
-2. **Jerarquía de Figuras Geométricas:**
-   * Implementación de una clase abstracta base `FiguraGeometrica` con métodos para el cálculo de áreas y perímetros.
-   * Clases derivadas: `Circulo`, `Rectangulo`, `Triangulo` y `Cuadrado`.
-   * Iteración dinámica y cálculo polimórfico mediante colecciones (`List<FiguraGeometrica>`).
+| Campo | Detalle |
+| :--- | :--- |
+| **Nombre** | Rafael Dominguez Jimenez |
+| **Matrícula** | S25018109 |
+| **Fecha** | 08/08/2026 |
 
 ---
 
-## Fragmento de Código (Demostración de Polimorfismo)
+## 📖 Descripción del Problema
+
+El ejercicio modela una jerarquía basada en una clase raíz abstracta `Animal`, la cual define métodos para obtener datos específicos de cada especie (nombre científico, sonido, alimentación y hábitat). La estructura se organiza de la siguiente manera:
+
+* **Animal (Clase abstracta raíz):** Declara los métodos `getNombreCientifico()`, `getSonido()`, `getAlimentos()` y `getHabitat()`.
+* **Cánido y Felino (Subclases abstractas intermedias):** Heredan de `Animal` y agrupan comportamientos biológicos más específicos sin llegar a instanciarse directamente.
+* **Clases Concretas:**
+  * **Perro** (*Canis lupus familiaris*): Ladrido, carnívoro, doméstico.
+  * **Lobo** (*Canis lupus*): Aullido, carnívoro, bosque.
+  * **León** (*Panthera leo*): Rugido, carnívoro, pradera.
+  * **Gato** (*Felis silvestris catus*): Maullido, ratones, doméstico.
+
+---
+
+## 💻 Implementación del Método Principal (`Main.java`)
+
+Demostración del polimorfismo almacenando instancias de las subclases concretas en una colección genérica referenciada a la clase base:
 
 ```java
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main{
-    public static void main(String[] args){
+public class Main {
+    public static void main(String[] args) {
         List<Animal> Animales = new ArrayList<>();
         Animales.add(new Lobo());
         Animales.add(new Perro());
         Animales.add(new Gato());
         Animales.add(new Leon());
 
-        for(Animal x : Animales){
-            System.out.println("Nombre cientifico: "+ x.getNombreCientifico());
-            System.out.println("Sonido: "+ x.getSonido());
-            System.out.println("Alimentacion: "+ x.getAlimento());
-            System.out.println("Habitat: "+ x.getHabitat());
+        for (Animal x : Animales) {
+            System.out.println("Nombre cientifico: " + x.getNombreCientifico());
+            System.out.println("Sonido: " + x.getSonido());
+            System.out.println("Alimentacion: " + x.getAlimento());
+            System.out.println("Habitat: " + x.getHabitat());
             System.out.println();
         }
-
     }
 }
-
-UTILIZACIÓN DE IA: Por mi parte la única utilización de IA fue la de JetBrains al momento de copiar los métodos abstractos de la clase Animal.
