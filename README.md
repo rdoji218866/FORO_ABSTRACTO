@@ -53,3 +53,5 @@ public class Main {
         }
     }
 }
+
+//Por mi parte la única utilización de IA fue la de JetBrains al momento de copiar los métodos abstractos de la clase Animal.
