@@ -30,36 +30,22 @@ Este repositorio contiene la implementación práctica de conceptos clave de la 
 import java.util.ArrayList;
 import java.util.List;
 
-public class main {
-    public static void main(){
-        List<FiguraGeometrica> Figuras = new ArrayList<>();
-        Figuras.add(new Circulo("Diego2", 4));
-        Figuras.add(new Rectangulo("Isa2", 10, 5));
-        Figuras.add(new Triangulo("Cesar2", 6, 7));
-        Figuras.add(new Cuadrado("Karol2", 2));
+public class Main{
+    public static void main(String[] args){
+        List<Animal> Animales = new ArrayList<>();
+        Animales.add(new Lobo());
+        Animales.add(new Perro());
+        Animales.add(new Gato());
+        Animales.add(new Leon());
 
-        for(FiguraGeometrica figura : Figuras){
-            System.out.printf("Area = %.2f\n", figura.calcularArea());
-            System.out.printf("Perimetro = %.2f\n", figura.calcularPerimetro());
-            System.out.printf("Nombre = " + figura.getNombre() + "\n\n");
+        for(Animal x : Animales){
+            System.out.println("Nombre cientifico: "+ x.getNombreCientifico());
+            System.out.println("Sonido: "+ x.getSonido());
+            System.out.println("Alimentacion: "+ x.getAlimento());
+            System.out.println("Habitat: "+ x.getHabitat());
+            System.out.println();
         }
 
-        Circulo c1 = new Circulo("Diego", 3.5);
-        Rectangulo r1 = new Rectangulo("Isa", 12, 1.3);
-        Triangulo t1 = new Triangulo("Cesar", 20, 13);
-
-        System.out.println("=======FIGURAS GEOMETRICAS=======");
-        System.out.printf("Area = %.2f\n", c1.calcularArea());
-        System.out.printf("Perimetro = %.2f\n", c1.calcularPerimetro());
-        System.out.printf("Nombre = " + c1.getNombre() + "\n\n");
-
-        System.out.printf("Area = %.2f\n", r1.calcularArea());
-        System.out.printf("Perimetro = %.2f\n", r1.calcularPerimetro());
-        System.out.printf("Nombre = " + r1.getNombre() + "\n\n");
-
-        System.out.printf("Area = %.2f\n", t1.calcularArea());
-        System.out.printf("Perimetro = %.2f\n", t1.calcularPerimetro());
-        System.out.printf("Nombre = " + t1.getNombre() + "\n");
     }
 }
 
